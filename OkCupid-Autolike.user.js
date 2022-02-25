@@ -1,22 +1,17 @@
 // ==UserScript==
-// @name OkCupid-Autolike-Autolike
-// @author nemanjan00
-// @include http://www.okcupid.com/quickmatch
-// @include https://www.okcupid.com/quickmatch
-// @include http://www.okcupid.com/doubletake
-// @include https://www.okcupid.com/doubletake
-// @include https://www2.okcupid.com/doubletake
-// @include https://www2.okcupid.com/quickmatch
-// @include https://m.okcupid.com/doubletake
-// @downloadURL https://raw.githubusercontent.com/nemanjan00/OkCupid-Autolike/master/OkCupid-Autolike.user.js
-// @namespace https://github.com/nemanjan00/OkCupid-Autolike
-// @updateURL https://raw.githubusercontent.com/nemanjan00/OkCupid-Autolike/master/OkCupid-Autolike.user.js
-// @version 2.3
-// ==/UserScript==
+// Radom Liker for Okcupied
+// Made by CombinE88 & Pr0xy-F0x
 
 setInterval(function(){
-	var desktopButton = document.getElementsByClassName(".doubletake-like-button")[0];
-	var mobileButton = document.getElementsByClassName("quickmatch-button-like")[0];
-	
-	(desktopButton || mobileButton).click();
-}, 500);
+    var desktopButton = document.getElementsByClassName("dt-action-buttons-button like")[0];
+    (desktopButton).click();
+    await new Promise(r => setTimeout(r, getRandomNumber()));
+
+},1)
+
+function getRandomNumber(){
+    var multiplicator = Math.random()*1000;
+    var number = Math.random();
+    var outPut = Math.ceil(number*multiplicator);
+    return outPut;
+}
